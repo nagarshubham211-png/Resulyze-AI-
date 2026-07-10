@@ -3,9 +3,11 @@ import React from "react";
 const Hero = () => {
   return (
     <section
-  id="hero"
-  className="relative min-h-screen flex items-center justify-center overflow-hidden scroll-mt-24"
->
+      id="hero"
+      className="relative overflow-hidden scroll-mt-24
+             pt-28 pb-16
+             md:min-h-screen md:flex md:items-center"
+    >
 
       {/* Animated Background Grid */}
       <div className="absolute inset-0 opacity-[0.04]">
@@ -27,24 +29,43 @@ const Hero = () => {
       {/* Floating Light */}
       <div className="absolute top-[20%] right-[20%] w-3 h-3 rounded-full bg-cyan-300 shadow-[0_0_40px_10px_rgba(34,211,238,0.7)] animate-ping" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-16 items-center relative z-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10
+grid grid-cols-1 lg:grid-cols-2
+gap-14 lg:gap-16
+items-center relative z-10">
 
         {/* LEFT CONTENT */}
         <div>
 
           {/* Badge */}
-          <div className="inline-flex mt-10 items-center gap-2 px-5 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 backdrop-blur-xl shadow-lg shadow-cyan-500/10">
+          <div
+            className="
+  inline-flex
+  mt-4 sm:mt-8 lg:mt-10
+  px-4 py-2
+  gap-2
+  rounded-full
+  border border-cyan-400/20
+  bg-cyan-400/10
+  backdrop-blur-xl
+  shadow-lg shadow-cyan-500/10
+  "
+          >
 
             <div className="w-2 h-2 rounded-full bg-cyan-300 animate-pulse" />
 
-            <span className="text-sm tracking-wide text-cyan-300 font-medium">
+            <span className="text-xs sm:text-sm tracking-wide text-cyan-300 font-medium">
               AI Powered Resume Intelligence
             </span>
 
           </div>
 
           {/* Heading */}
-          <h1 className="text-5xl md:text-7xl font-black leading-[1.05] mt-8">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl
+font-black
+leading-tight
+lg:leading-[1.05]
+mt-6">
 
             Build A
             <span className="block text-white">
@@ -58,14 +79,14 @@ const Hero = () => {
           </h1>
 
           {/* Description */}
-          <p className="text-gray-400 text-lg leading-relaxed mt-8 max-w-xl">
+          <p className="text-gray-400 text-base sm:text-lg leading-relaxed mt-6 max-w-xl">
             Analyze resumes with next-gen AI technology. Get ATS scores,
             smart keyword optimization, skill-gap analysis, and personalized
             recommendations to stand out in every job application.
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-wrap gap-5 mt-10">
+         <div className="flex flex-col sm:flex-row gap-4 mt-8">
 
             {/* Primary Button */}
             <button className="relative overflow-hidden group px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 font-semibold tracking-wide shadow-2xl shadow-cyan-500/20 hover:scale-105 transition-all duration-500">
@@ -94,7 +115,7 @@ const Hero = () => {
           </div>
 
           {/* Stats */}
-          <div className="flex gap-10 mt-14">
+          <div className="grid grid-cols-3 gap-5 mt-10 text-center">
 
             <div>
               <h2 className="text-3xl font-bold text-cyan-400">50K+</h2>
@@ -119,9 +140,20 @@ const Hero = () => {
         <div className="relative flex justify-center items-center">
 
           {/* Background Glow Effects */}
-          <div className="absolute w-[520px] h-[520px] bg-cyan-500/20 rounded-full blur-[140px] animate-pulse" />
+          <div className="absolute 
+w-[260px]
+h-[260px]
+sm:w-[400px]
+sm:h-[400px]
+lg:w-[520px]
+lg:h-[520px] bg-cyan-500/20 rounded-full blur-[140px] animate-pulse" />
 
-          <div className="absolute w-[420px] h-[420px] bg-purple-600/20 rounded-full blur-[140px] animate-pulse" />
+          <div className="absolute w-[220px]
+h-[220px]
+sm:w-[320px]
+sm:h-[320px]
+lg:w-[420px]
+lg:h-[420px] bg-purple-600/20 rounded-full blur-[140px] animate-pulse" />
 
           {/* Floating Orbs */}
           <div className="absolute top-10 left-10 w-4 h-4 bg-cyan-300 rounded-full shadow-[0_0_30px_10px_rgba(34,211,238,0.6)] animate-bounce" />
@@ -129,7 +161,18 @@ const Hero = () => {
           <div className="absolute bottom-16 right-10 w-3 h-3 bg-purple-400 rounded-full shadow-[0_0_30px_10px_rgba(168,85,247,0.6)] animate-ping" />
 
           {/* Main Card */}
-          <div className="relative w-full max-w-lg rounded-[36px] border border-white/10 bg-white/[0.05] backdrop-blur-3xl overflow-hidden shadow-[0_25px_100px_rgba(0,255,255,0.12)]">
+         <div className="relative
+w-full
+max-w-sm
+sm:max-w-md
+lg:max-w-lg
+rounded-[28px]
+sm:rounded-[36px]
+border border-white/10
+bg-white/[0.05]
+backdrop-blur-3xl
+overflow-hidden
+shadow-[0_25px_100px_rgba(0,255,255,0.12)]">
 
             {/* Premium Gradient Border */}
             <div className="absolute inset-0 rounded-[36px] p-[1px] bg-gradient-to-br from-cyan-400/40 via-transparent to-purple-500/40">
@@ -137,7 +180,7 @@ const Hero = () => {
             </div>
 
             {/* Card Content */}
-            <div className="relative p-8">
+            <div className="relative p-5 sm:p-8">
 
               {/* Top Section */}
               <div className="flex items-center justify-between">
@@ -181,7 +224,7 @@ const Hero = () => {
 
                       <div className="flex items-center gap-2">
 
-                        <h2 className="text-2xl font-black tracking-wide bg-gradient-to-r from-white via-cyan-100 to-cyan-300 bg-clip-text text-transparent">
+                        <h2 className="text-2xltext-lg sm:text-xl lg:text-2xl font-black tracking-wide bg-gradient-to-r from-white via-cyan-100 to-cyan-300 bg-clip-text text-transparent">
                           AI Resume Scan
                         </h2>
 
@@ -213,7 +256,7 @@ const Hero = () => {
                       ATS SCORE
                     </p>
 
-                    <h3 className="text-2xl font-bold text-green-400">
+                    <h3 className="text-xl sm:text-2xl font-bold text-green-400">
                       92%
                     </h3>
 
@@ -273,7 +316,7 @@ const Hero = () => {
                     </div>
 
                     {/* Premium Progress Bar */}
-                    <div className="relative w-full h-4 rounded-full bg-white/5 overflow-hidden border border-white/5">
+                    <div className="relative w-full h-3 sm:h-4 rounded-full bg-white/5 overflow-hidden border border-white/5">
 
                       {/* Glass Overlay */}
                       <div className="absolute inset-0 bg-white/[0.02]" />
@@ -297,7 +340,7 @@ const Hero = () => {
               </div>
 
               {/* Bottom Analytics Cards */}
-              <div className="grid grid-cols-2 gap-5 mt-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
 
                 {/* Missing Keywords */}
                 <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl">

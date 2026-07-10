@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import { Menu, X } from "lucide-react";
+
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <>
       {/* Premium Top Glow Line */}
@@ -80,6 +84,84 @@ const Navbar = () => {
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center gap-10 text-sm font-medium text-gray-300">
+            {[
+              { name: "Features", link: "#features" },
+              { name: "Solutions", link: "#solutions" },
+              { name: "Pricing", link: "#pricing" },
+              { name: "About", link: "#about" },
+            ].map((item) => (
+              <a
+                key={item.name}
+                href={item.link}
+                className="relative hover:text-cyan-400 transition-all duration-300 group"
+              >
+                {item.name}
+
+                <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-gradient-to-r from-cyan-400 to-purple-500 group-hover:w-full transition-all duration-500" />
+              </a>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="hidden md:block">
+            <button className="relative overflow-hidden group px-6 py-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-2xl hover:scale-105 transition-all duration-500">
+
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 opacity-0 group-hover:opacity-100 transition duration-500" />
+
+              <div className="absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:left-[100%] transition-all duration-1000" />
+
+              <div className="absolute inset-0 blur-2xl bg-cyan-400 opacity-10 group-hover:opacity-40 transition duration-500" />
+
+              <span className="relative text-white font-semibold tracking-wide">
+                Analyze Resume
+              </span>
+
+            </button>
+          </div>
+          <div className="md:hidden">
+            <button
+              onClick={() => setMenuOpen(true)}
+              className="text-white p-2 rounded-xl bg-white/5 border border-white/10 backdrop-blur-xl hover:bg-white/10 transition"
+            >
+              <Menu size={28} />
+            </button>
+          </div>
+
+        </div>
+
+        {/* Overlay */}
+        <div
+          className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-500 ${menuOpen
+              ? "opacity-100 visible"
+              : "opacity-0 invisible"
+            }`}
+          onClick={() => setMenuOpen(false)}
+        />
+
+        {/* Mobile Drawer */}
+        <div
+          className={`fixed top-0 right-0 h-screen w-72 bg-black/70 backdrop-blur-3xl border-l border-white/10 shadow-2xl z-50 transform transition-transform duration-500 ${menuOpen
+              ? "translate-x-0"
+              : "translate-x-full"
+            }`}
+        >
+
+          <div className="flex items-center justify-between p-6 border-b border-white/10">
+
+            <h2 className="text-xl font-bold text-white">
+              Menu
+            </h2>
+
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="text-white"
+            >
+              <X size={28} />
+            </button>
+
+          </div>
+
+          <div className="flex flex-col p-8 gap-8">
 
             {[
               {
@@ -102,36 +184,20 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.link}
-                className="relative hover:text-cyan-400 transition-all duration-300 group"
+                onClick={() => setMenuOpen(false)}
+                className="text-lg text-gray-300 hover:text-cyan-400 transition"
               >
                 {item.name}
-
-                {/* Underline Animation */}
-                <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-gradient-to-r from-cyan-400 to-purple-500 group-hover:w-full transition-all duration-500" />
               </a>
             ))}
 
-          </div>
-
-          {/* CTA Button */}
-          <button className="relative overflow-hidden group px-6 py-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-2xl hover:scale-105 transition-all duration-500">
-
-            {/* Gradient Hover Layer */}
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 opacity-0 group-hover:opacity-100 transition duration-500" />
-
-            {/* Shine Animation */}
-            <div className="absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:left-[100%] transition-all duration-1000" />
-
-            {/* Glow Blur */}
-            <div className="absolute inset-0 blur-2xl bg-cyan-400 opacity-10 group-hover:opacity-40 transition duration-500" />
-
-            <span className="relative text-white font-semibold tracking-wide">
+            <button className="mt-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 text-white font-semibold hover:scale-105 transition">
               Analyze Resume
-            </span>
+            </button>
 
-          </button>
-
+          </div>
         </div>
+
       </nav>
     </>
   );

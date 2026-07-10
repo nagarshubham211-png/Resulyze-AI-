@@ -178,18 +178,31 @@ const Footer = () => {
           </p>
 
           {/* Social Icons */}
-          <div className="flex items-center gap-4">
-
-            {["S", "H", "U", "B", "H", "A", "M"].map((item, index) => (
-              <button
-                key={index}
-                className="w-12 h-12 rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl flex items-center justify-center text-gray-400 hover:text-cyan-300 hover:border-cyan-400/30 hover:bg-cyan-500/10 transition-all duration-300"
-              >
-                {item}
-              </button>
-            ))}
-
-          </div>
+         <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4">
+  {["S", "H", "U", "B", "H", "A", "M"].map((item, index) => (
+    <button
+      key={index}
+      className="
+        w-9 h-9
+        sm:w-10 sm:h-10
+        md:w-12 md:h-12
+        rounded-xl md:rounded-2xl
+        border border-white/10
+        bg-white/[0.04]
+        backdrop-blur-xl
+        flex items-center justify-center
+        text-sm sm:text-base
+        text-gray-400
+        hover:text-cyan-300
+        hover:border-cyan-400/30
+        hover:bg-cyan-500/10
+        transition-all duration-300
+      "
+    >
+      {item}
+    </button>
+  ))}
+</div>
 
         </div>
 
